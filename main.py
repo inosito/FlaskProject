@@ -20,5 +20,9 @@ def view():
 def edit():
     return render_template("edit.html")
 
+@app.route('/added', methods=["POST"])
+def added():
+    return render_template("added.html")
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

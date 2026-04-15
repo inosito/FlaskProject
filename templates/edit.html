@@ -1,5 +1,21 @@
 {% extends 'index.html' %}
 
 {% block body %}
+    <h3>Enter a movie...</h3>
 
+    <form method="post" action="/added">
+        <p>Movie name</p>
+        <input type="text" name="game" required>
+        <br><br>
+        <p>Genre</p>
+        <input type="text" name="platform" required>
+        <br><br>
+        <p>Value</p>
+        <input type="text" name="value" required>
+        <br><br>
+        <p>Year Released</p>
+        <input type="text" name="year" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}
