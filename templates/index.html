@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
     <title>Mike's Movie MADNESS</title>
 </head>
 <body>
     <h1>MOVIE TRACKER.</h1>
-    <a href="/">Home</a>
-    <a href="/edit">Edit</a>
-    <a href="/view">View</a>
+    <a id="navbutton" href="/">Home</a>
+    <a id="navbutton" href="/edit">Edit</a>
+    <a id="navbutton" href="/view">View</a>
 
     {% block body %}
 
