@@ -1,5 +1,25 @@
 {% extends 'index.html' %}
 
 {% block body %}
-
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="width: 50%; margin-left: auto; margin-right: auto;">
+        {% for movie in movies %}
+            <div class="col">
+                <div class="card mb-3" style="width: 300px;">
+                    <div class="row g-0">
+                    <div class="col-md-4">
+                        <image src="{{movie.poster}}" style="height: 150px; width: 100px;" class="img-fluid rounded-start"></image>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{movie.movieName}}</h5>
+                            <p class="card-text">Year Released: {{movie.releaseYear}}</p>
+                            <p class="card-text">Genre: {{movie.genre}}</p>
+                            <p class="card-text">Rating: {{movie.rating}}</p>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

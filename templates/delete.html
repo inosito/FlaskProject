@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <style>
+        .row.g-0:hover {
+            background-color: rgba(255, 0, 0, 0.315)
+        };
+    </style>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="width: 50%; margin-left: auto; margin-right: auto;">
+        {% for movie in movies %}
+            <div class="col">
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="movieIndex" value="{{loop.index0}}">
+                    <button type="submit" style="width: 100%; cursor: pointer; border: none; text-align: left; background: none; padding: 0;">
+                        <div class="card mb-3" style="width: 300px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <image src="{{movie.poster}}" style="height: 150px; width: 100px;" class="img-fluid rounded-start"></image>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{movie.movieName}}</h5>
+                                        <p class="card-text">Year Released: {{movie.releaseYear}}</p>
+                                        <p class="card-text">Genre: {{movie.genre}}</p>
+                                        <p class="card-text">Rating: {{movie.rating}}</p>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

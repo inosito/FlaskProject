@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <h3>Enter a movie...</h3>
+
+    <form action="/add" method="post" enctype="multipart/form-data" style="width: 50%;">
+        <div class="form-group">
+            <label for="movieName">Movie Name</label>
+            <input type="text" class="form-control" id="movieName" name="movieName" required>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" class="form-control" id="genre" name="genre" required>
+        </div>
+        <div class="form-group">
+            <label for="releaseYear">Year Released</label>
+            <input type="text" class="form-control" id="releaseYear" name="releaseYear" required>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <select class="form-control" id="rating" name="rating" required>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+        </div>        
+        <div class="form-group">
+            <label for="poster">Movie Poster</label>
+            <input type="file" class="form-control-file" id="poster" name="poster">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
