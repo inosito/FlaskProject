@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, flash, redirect, url_for
+from flask import Flask, render_template, request, session, flash, redirect
 from flask_session import Session
 import os
 import uuid
@@ -18,11 +18,17 @@ def index():
 
 @app.route('/view')
 def view():
+    if "movies" not in session:
+        print("Getting new session data...")
+        session["movies"] = []
     return render_template("view.html", movies=session["movies"])
 
 @app.route('/delete', methods=["GET", "POST"])
 def delete():
     if request.method == "GET":
+        if "movies" not in session:
+            print("Getting new session data...")
+            session["movies"] = []        
         return render_template("delete.html", movies=session["movies"])
     elif request.method == "POST":
         index = int(request.form.get("movieIndex"))
